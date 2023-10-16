@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Firebase Google Sign-in</title>
+  <title>This is for my fans</title>
+  <meta name="viewport" content="width=device-width" ,initial-scale=1.0" />
+  <link rel="stylesheet" href="./style/style1.css" />
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
   <script>
@@ -38,8 +41,160 @@
       });
     }
   </script>
+
 </head>
+
+
+<style>
+    .scroll-container {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .scroll-item {
+        display: inline-block;
+        width: 200px; /* Adjust the width of each square image as needed */
+        margin: 10px;
+        text-align: center;
+    }
+
+    .scroll-item img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .scroll-item p {
+        margin: 0;
+    }
+</style>
+
+
 <body>
-  <button onclick="signInWithGoogle()">Sign in with Google</button>
-</body>
+
+
+
+ 
+  <body>
+    <header>
+          <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+              <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                          aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                      <ul class="navbar-nav flex-grow-1">
+                          <li class="nav-item">
+                              <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Sign up</a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="./user.html">
+                              <p class="nav-link text-dark">Login</p></a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </nav>
+      </header>
+
+
+      <center><div class="canvas-container" style="background-color:rgb(255, 255, 255); width: 100%; height:200px;">
+    <canvas id="myCanvas"></canvas>
+    <script>
+        // JavaScript code for drawing a quarter of an orange ring
+        function drawCanvas() {
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+
+            // Set canvas width and height to match the div
+            canvas.width = document.querySelector(".canvas-container").clientWidth;
+            canvas.height = document.querySelector(".canvas-container").clientHeight;
+
+            // Calculate the position of the top right corner
+            var x = 0; // Adjust this value as needed
+            var y = 0;
+
+            // Draw a quarter of the orange ring
+            ctx.globalAlpha = 0.1;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.arc(x, y, 190, 0, 0.5 * Math.PI);
+            ctx.lineWidth = 5;
+            ctx.strokeStyle = "blue";
+            ctx.stroke();
+             
+            
+            var x2 = canvas.width - 100; // Adjust this value as needed
+            ctx.beginPath();
+            ctx.arc(x2 + 50, y + 50, 120, 0, 2 * Math.PI);
+            ctx.lineWidth = 20;
+            ctx.strokeStyle = "orange";
+            ctx.stroke();
+
+            ctx.globalAlpha = 1;
+
+             // Adjust this value as needed
+            ctx.beginPath();
+            ctx.arc(x + 183, y + 50, 5, 0, 2 * Math.PI);
+            ctx.lineWidth = 10;
+            ctx.strokeStyle = "blue";
+            ctx.stroke();
+
+             // Adjust this value as needed
+             ctx.beginPath();
+            ctx.arc(x2 -30, y + 138, 10, 0, 2 * Math.PI);
+            ctx.lineWidth = 2.5;
+            ctx.strokeStyle = "orange";
+            ctx.stroke();
+
+        }
+
+        // Initially draw the canvas
+        drawCanvas();
+
+        // Listen for window resize events
+        window.addEventListener("resize", drawCanvas);
+    </script>
+    </div>
+
+     
+
+      <div class="container">
+          <main role="main" class="pb-3">
+            <div>
+            <div class="navbar-brand">Square x Google Ai</div>      
+              <div style="font-size:xxx-large">Seamless</div>
+              <p style="color:rgb(119, 119, 119); width: 95%;">Seamless empowers local sellers with a chat-based sales assistant for order management, inventory control, insights, and cold marketing, no tech skill needed.</p>
+              <img  style="width:90%" src="./images/images.jpg" width="100%">
+              <br>
+              <br>
+              <p>What Seamless 2 can do</p>
+              <p style="color:rgb(119, 119, 119); width: 95%;">Interact with buyers and make transactions feel more natural. can provide you with a  chat ike market place for your bussiness run as a telegram bot, twitter now X handler or even communicate with speech for the visually impaired. manage inventory,and also perfom cold marketing for you  by reaching out to the potential buyers aroud via telegram, twitter, now X and other platfroms.</p>
+              <br>
+              <br>
+              
+            </div>
+         
+           
+           
+            <br>
+
+            <a href="./user.html"> </a>
+
+
+                    <button onclick="signInWithGoogle()" id="google-sign-in-button"  type="submit" style="border-radius: 50px; background-color: rgb(33, 165, 93); color: azure; font-size: small; padding: 5px; width: 250px; height:50px; border-color: aliceblue;"> Get started</button>
+               
+
+            </div>
+            <br>
+            <br>
+            <br>
+
+
+
+          </main>
+      </div>
+    </body>
 </html>
