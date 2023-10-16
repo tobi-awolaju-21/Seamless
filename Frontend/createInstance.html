@@ -5,6 +5,8 @@
   <title>This is for my fans</title>
   <meta name="viewport" content="width=device-width" ,initial-scale=1.0" />
   <link rel="stylesheet" href="./style/style1.css" />
+   <script src="https://www.gstatic.com/firebasejs/compat/app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/compat/database.js"></script>
 </head>
 
 
@@ -141,16 +143,16 @@
             </div>
             
             <form>
-            <input type="text" placeholder="instance name">
-            <br>
-            <br>
-            <input type="text" placeholder="description" >
-            <br>
-            <br>
-            <input type="text" placeholder="catalog sheet url">
-            <br>
-            <br>
-            <button type="submit" style="border-radius: 50px; background-color: rgb(33, 165, 93); color: azure; font-size: small; padding: 5px; width: 250px; height:50px; border-color: aliceblue;"> Get started</button>
+  <input type="text" name="instance_name" placeholder="instance name">
+  <br>
+  <br>
+  <input type="text" name="description" placeholder="description">
+  <br>
+  <br>
+  <input type="text" name="catalog_sheet_url" placeholder="catalog sheet url">
+  <br>
+  <br>
+<button type="submit" style="border-radius: 50px; background-color: rgb(33, 165, 93); color: azure; font-size: small; padding: 5px; width: 250px; height:50px; border-color: aliceblue;"> Get started</button>
 
             </form>
 
@@ -158,6 +160,52 @@
     
           </main>
       </div>
+
+
+
+
+        <script>
+    // Import the Firebase SDK
+    import firebase from 'firebase/compat/app';
+    import database from 'firebase/compat/database';
+
+    // Initialize Firebase
+    const firebaseConfig = {
+    apiKey: "AIzaSyBl4n_TdjT6OrpGQmacttbNR8HkwXkDhBI",
+      authDomain: "seamless-c501c.firebaseapp.com",
+      projectId: "seamless-c501c",
+      storageBucket: "seamless-c501c.appspot.com",
+      messagingSenderId: "870790178163",
+      appId: "1:870790178163:web:faac107354d6098fa7d106",
+      measurementId: "G-JECP9VYFZS"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    // Get a reference to the database
+    const db = database();
+
+    // Get a reference to the form
+    const form = document.querySelector('form');
+
+    // Add an event listener to the form's submit event
+    form.addEventListener('submit', (event) => {
+      // Prevent the default form submission behavior
+      event.preventDefault();
+
+      // Get the form data
+      const formData = new FormData(form);
+
+      // Create a new node in the database
+      const nodeRef = db.ref('ABCD/instance');
+
+      // Set the JSON data on the node
+      nodeRef.set({
+        instanceName: formData.get('instance_name'),
+        description: formData.get('description'),
+        catalogSheetUrl: formData.get('catalog_sheet_url')
+      });
+    });
+  </script>
     </body>
    
 </html>
