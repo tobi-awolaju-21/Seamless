@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>This is for my fans</title>
+  <meta name="viewport" content="width=device-width" ,initial-scale=1.0" />
+  <link rel="stylesheet" href="./style/style1.css" />
+</head>
+
+
+<style>
+    .scroll-container {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .scroll-item {
+        display: inline-block;
+        width: 200px; /* Adjust the width of each square image as needed */
+        margin: 10px;
+        text-align: center;
+    }
+
+    .scroll-item img {
+        width: 80%;
+        max-width: 80%;
+        height: auto;
+    }
+
+    .scroll-item p {
+        margin: 0;
+    }
+</style>
+
+
+<body>
+
+
+
+ 
+  <body>
+
+      <header>
+          <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+              <div class="container-fluid">
+                  
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                          aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                      <ul class="navbar-nav flex-grow-1">
+                          <li class="nav-item">
+                              <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Guide</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link text-dark">Logout</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </nav>
+      </header>
+
+
+      <center><div class="canvas-container" style="background-color:rgb(255, 255, 255); width: 100%; height:200px;">
+    <canvas id="myCanvas"></canvas>
+    <script>
+        // JavaScript code for drawing a quarter of an orange ring
+        function drawCanvas() {
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+
+            // Set canvas width and height to match the div
+            canvas.width = document.querySelector(".canvas-container").clientWidth;
+            canvas.height = document.querySelector(".canvas-container").clientHeight;
+
+            // Calculate the position of the top right corner
+            var x = 0; // Adjust this value as needed
+            var y = 0;
+
+            // Draw a quarter of the orange ring
+            ctx.globalAlpha = 0.1;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.arc(x, y, 190, 0, 0.5 * Math.PI);
+            ctx.lineWidth = 5;
+            ctx.strokeStyle = "blue";
+            ctx.stroke();
+             
+            
+            var x2 = canvas.width - 100; // Adjust this value as needed
+            ctx.beginPath();
+            ctx.arc(x2 + 50, y + 50, 120, 0, 2 * Math.PI);
+            ctx.lineWidth = 20;
+            ctx.strokeStyle = "orange";
+            ctx.stroke();
+
+            ctx.globalAlpha = 1;
+
+             // Adjust this value as needed
+            ctx.beginPath();
+            ctx.arc(x + 183, y + 50, 5, 0, 2 * Math.PI);
+            ctx.lineWidth = 10;
+            ctx.strokeStyle = "blue";
+            ctx.stroke();
+
+             // Adjust this value as needed
+             ctx.beginPath();
+            ctx.arc(x2 -30, y + 138, 10, 0, 2 * Math.PI);
+            ctx.lineWidth = 2.5;
+            ctx.strokeStyle = "orange";
+            ctx.stroke();
+
+        }
+
+        // Initially draw the canvas
+        drawCanvas();
+
+        // Listen for window resize events
+        window.addEventListener("resize", drawCanvas);
+    </script>
+    </div>
+
+     
+    
+
+
+      <div class="container">
+          <main role="main" class="pb-3">
+                <div> 
+                <div style="font-size:x-large">Instances</div>
+
+                <p style="color:rgb(119, 119, 119); width: 95%;">Instances are collections of web services that runs your bussines for you when you are away.</p>
+              <br>
+              <br>
+              <div class="scroll-container">
+                <div class="scroll-item">
+                    <a href="./createInstance.html">
+                        <img src="./images/newinstance.png" width="25%" alt="Image 1">
+                        <p>New Instance</p>
+                    </a>
+                </div>
+
+
+                <div class="scroll-item">
+                    <img src="./images/placeholder.png" width="25%" alt="Image 1">
+                    <p>Nike store</p>
+                </div>
+
+
+                <div class="scroll-item">
+                    <img src="./images/placeholder.png" width="25%" alt="Image 1">
+                    <p>Cloth store</p>
+                </div>
+
+
+                <div class="scroll-item">
+                    <img src="./images/placeholder.png" width="25%" alt="Image 1">
+                    <p>Ticket bot</p>
+                </div>
+
+                
+                <div class="scroll-item">
+                    <img src="./images/placeholder.png" width="25%" alt="Image 1">
+                    <p>Test app</p>
+                </div>
+                
+            </div>
+    
+          </main>
+      </div>
+    </body>
+   
+</html>

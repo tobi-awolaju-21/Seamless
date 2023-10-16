@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Firebase Google Sign-in</title>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script>
+    // Initialize Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyBl4n_TdjT6OrpGQmacttbNR8HkwXkDhBI",
+      authDomain: "seamless-c501c.firebaseapp.com",
+      projectId: "seamless-c501c",
+      storageBucket: "seamless-c501c.appspot.com",
+      messagingSenderId: "870790178163",
+      appId: "1:870790178163:web:faac107354d6098fa7d106",
+      measurementId: "G-JECP9VYFZS"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    // Create a GoogleAuthProvider object
+    const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+    // Sign in with Google
+    function signInWithGoogle() {
+      firebase.auth().signInWithPopup(googleProvider).then((result) => {
+        // The signed-in user info.
+        const user = result.user;
+
+        // Get the user's basic profile info.
+        const profile = user.profile;
+
+        // Do something with the user info.
+        console.log(user.displayName, user.email, profile.imageUrl);
+      }).catch((error) => {
+        // Handle Errors here.
+        console.error(error);
+      });
+    }
+  </script>
+</head>
+<body>
+  <button onclick="signInWithGoogle()">Sign in with Google</button>
+</body>
+</html>
