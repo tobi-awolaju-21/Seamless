@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- do not give up and show up everyday better than the previous one-->
   <title>Firebase Google Sign-in</title>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
@@ -27,11 +26,11 @@
         // The signed-in user info.
         const user = result.user;
 
-        // Get the user's basic profile info.
-        const profile = user.profile;
+        // Get the user's UID.
+        const uid = user.uid;
 
-        // Do something with the user info.
-        console.log(user.displayName, user.email, profile.imageUrl);
+        // Console.log the UID.
+        console.log(uid);
       }).catch((error) => {
         // Handle Errors here.
         console.error(error);
