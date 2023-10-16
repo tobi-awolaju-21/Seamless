@@ -34,7 +34,8 @@
 
         // Console.log the UID.
         console.log(uid);
-        console.log("Signed");
+    // Go to ./user.html and pass the UID.
+    window.location.href = './user.html?uid=' + uid;
       }).catch((error) => {
         // Handle Errors here.
         console.error(error);
@@ -90,8 +91,8 @@
                               <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"></a>
                           </li>
                           <li class="nav-item">
-                            <a href="./user.html">
-                              <p class="nav-link text-dark">Login</p></a>
+                            <a href="#">
+                              <p onclick="signInWithGoogle()" class="nav-link text-dark">Login</p></a>
                           </li>
                       </ul>
                   </div>
